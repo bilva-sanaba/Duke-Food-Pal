@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Food Pal</title>
+    <!-- Bootstrap core CSS-->
+    <link href="bootstrap/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom fonts for this template-->
+    <link href="bootstrap/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <!-- Page level plugin CSS-->
+    <link href="bootstrap/vendor/datatables/dataTables.bootstrap4.css" rel="stylesheet">
+    <!-- Custom styles for this template-->
+    <link href="bootstrap/css/sb-admin.css" rel="stylesheet">
+  </head>
+
+  <!-- INCLUDE IN EVERY PAGE -->
+<div class="card card-header" style=
+"background-image: url(http://admissions.duke.edu/images/uploads/setting/overview-06.jpg);
+background-position: top center;
+background-repeat: stretch;
+">
+  <div class="text-white text-center d-flex align-items-center rgba-black-strong py-5 px-4">
+      <div>
+          <h1 class="pink-text"><i class="fa fa-table"></i> Diary</h1>
+          <a class="btn btn-pink"></i></a>
+          <h3 class="card-title pt-2"><strong></strong></h3>
+          <p>Below is a log of the meals you've purchased at different Duke vendors. To add to this log, 
+            enter your information into the 'Enter a new meal page'!
+          </p>
+          <a class="btn btn-pink"><br></i></a>
+      </div>
+  </div>
+</div>
+
+ <!-- Navigation-->
+ <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+    <div class="container">
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        Menu
+        <i class="fa fa-bars"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+            <a class="nav-link" href="home.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="diary.html">Diary</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="statistics.html">Statistics</a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link" href="suggestions.html">Suggestions</a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link" href="InsertMeal.html">Enter a Meal</a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link" data-toggle="modal" data-target="#exampleModal">Logout</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+            <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">×</span>
+            </button>
+          </div>
+          <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+          <div class="modal-footer">
+            <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+            <a class="btn btn-primary" onclick = "handleLogout();">Logout</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+<body onload="createFoodLog();">
+    <!-- <body onload="getFoodLog('teddy', 1000)">
+      <!-- Example DataTables Card-->
+      <div class="card mb-3">
+        <div class="card-header">
+          <i class="fa fa-table"></i> Diary Food Log</div>
+        <div class="card-body">
+          <div class="table-responsive">
+            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+              <thead>
+                <tr>
+                  <th>Item</th>
+                  <th>Vendor</th>
+                  <th>Price</th>
+                  <th>Calories</th>
+                  <th>Fat</th>
+                  <th>Protein</th>
+                  <th>Carbs</th>
+                  <th>Time</th>
+				  <th> Delete Entry </th>
+                </tr>
+              </thead>
+              <tfoot>
+                <tr>
+                  <th>Item</th>
+                  <th>Vendor</th>
+                  <th>Price</th>
+                  <th>Calories</th>
+                  <th>Fat</th>
+                  <th>Protein</th>
+                  <th>Carbs</th>
+                  <th>Time</th>
+				  <th> Delete Entry </th>
+                </tr>
+              </tfoot>
+              <tbody id="bodylog" >
+                
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bootstrap core JavaScript-->
+    <script src="bootstrap/vendor/jquery/jquery.min.js"></script>
+        <script src="web-backend/loginCheck.js"></script>
+    <script src="bootstrap/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- Core plugin JavaScript-->
+    <script src="bootstrap/vendor/jquery-easing/jquery.easing.min.js"></script>
+    <!-- Page level plugin JavaScript-->
+    <script src="bootstrap/vendor/chart.js/Chart.min.js"></script>
+    <!-- Custom scripts for all pages-->
+    <script src="bootstrap/js/sb-admin.min.js"></script>
+    <script src="web-backend/diary.js"></script>
+    <script src="web-backend/logout.js"></script>
+  </div>
+</body>
+
+</html>

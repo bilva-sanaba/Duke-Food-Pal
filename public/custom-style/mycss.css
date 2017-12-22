@@ -1,0 +1,296 @@
+
+body {
+  overflow-x: hidden;
+  overflow-y: hidden;
+  font-family: 'Roboto Slab', 'Helvetica Neue', Helvetica, Arial, sans-serif; }
+
+p {
+  line-height: 1.75; }
+
+a {
+  color: #0c30ff; }
+  a.active, a:active, a:focus, a:hover {
+    color: #fec503; }
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 700;
+  font-family: 'Montserrat', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  text-transform: uppercase; }
+
+section {
+  padding: 100px 0; }
+  section h2.section-heading {
+    font-size: 40px;
+    margin-top: 0;
+    margin-bottom: 15px; }
+  section h3.section-subheading {
+    font-size: 16px;
+    font-weight: 400;
+    font-style: italic;
+    margin-bottom: 50px;
+    text-transform: none;
+    font-family: 'Droid Serif', 'Helvetica Neue', Helvetica, Arial, sans-serif; }
+
+@media (min-width: 768px) {
+  section {
+    padding: 150px 0; } }
+
+::-moz-selection {
+  background: #0c30ff;
+  text-shadow: none; }
+
+::selection {
+  background: #0c30ff;
+  text-shadow: none; }
+
+img::selection {
+  background: transparent; }
+
+img::-moz-selection {
+  background: transparent; }
+
+body {
+  -webkit-tap-highlight-color: #0c30ff; }
+
+#mainNav {
+  background-color: #222222; }
+  #mainNav .navbar-toggler {
+    font-size: 12px;
+    right: 0;
+    padding: 13px;
+    text-transform: uppercase;
+    color: white;
+    border: 0;
+    background-color: #0c30ff;
+    font-family: 'Montserrat', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    text-transform: uppercase; }
+  #mainNav .navbar-brand {
+    color: #0c30ff;
+    font-family: 'Kaushan Script', 'Helvetica Neue', Helvetica, Arial, cursive; }
+    #mainNav .navbar-brand.active, #mainNav .navbar-brand:active, #mainNav .navbar-brand:focus, #mainNav .navbar-brand:hover {
+      color: #fec503; }
+  #mainNav .navbar-nav .nav-item .nav-link {
+    font-size: 90%;
+    font-weight: 400;
+    padding: 0.75em 0;
+    letter-spacing: 1px;
+    color: white;
+    font-family: 'Montserrat', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    text-transform: uppercase; }
+    #mainNav .navbar-nav .nav-item .nav-link.active, #mainNav .navbar-nav .nav-item .nav-link:hover {
+      color: #0c99ff; }
+
+@media (min-width: 992px) {
+  #mainNav {
+    padding-top: 25px;
+    padding-bottom: 25px;
+    -webkit-transition: padding-top 0.3s, padding-bottom 0.3s;
+    -moz-transition: padding-top 0.3s, padding-bottom 0.3s;
+    transition: padding-top 0.3s, padding-bottom 0.3s;
+    border: none;
+    background-color: transparent; }
+    #mainNav .navbar-brand {
+      font-size: 1.75em;
+      -webkit-transition: all 0.3s;
+      -moz-transition: all 0.3s;
+      transition: all 0.3s; }
+    #mainNav .navbar-nav .nav-item .nav-link {
+      padding: 1.1em 1em !important; }
+    #mainNav.navbar-shrink {
+      padding-top: 0;
+      padding-bottom: 0;
+      background-color: #222222; }
+      #mainNav.navbar-shrink .navbar-brand {
+        font-size: 1.25em;
+        padding: 12px 0; } }
+
+header.masthead {
+  text-align: center;
+  color: white;
+  background-image: url("../images/dukechapel.png");
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-position: center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover; }
+  header.masthead .intro-text {
+    padding-top: 150px;
+    padding-bottom: 100px; }
+    header.masthead .intro-text .intro-lead-in {
+      font-size: 22px;
+      font-style: italic;
+      line-height: 22px;
+      margin-bottom: 25px;
+      font-family: 'Droid Serif', 'Helvetica Neue', Helvetica, Arial, sans-serif; }
+    header.masthead .intro-text .intro-heading {
+      font-size: 50px;
+      font-weight: 700;
+      line-height: 50px;
+      margin-bottom: 25px;
+      font-family: 'Montserrat', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      text-transform: uppercase; }
+
+@media (min-width: 768px) {
+  header.masthead .intro-text {
+    padding-top: 300px;
+    padding-bottom: 200px; }
+    header.masthead .intro-text .intro-lead-in {
+      font-size: 40px;
+      font-style: italic;
+      line-height: 40px;
+      margin-bottom: 25px;
+      font-family: 'Droid Serif', 'Helvetica Neue', Helvetica, Arial, sans-serif; }
+    header.masthead .intro-text .intro-heading {
+      font-size: 60px;
+      font-weight: 700;
+      line-height: 75px;
+      margin-bottom: 50px;
+      font-family: 'Montserrat', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      text-transform: uppercase; } }
+
+.service-heading {
+  margin: 15px 0;
+  text-transform: none; }
+
+#portfolio .portfolio-item {
+  right: 0;
+  margin: 0 0 15px; }
+  #portfolio .portfolio-item .portfolio-link {
+    position: relative;
+    display: block;
+    max-width: 400px;
+    margin: 0 auto;
+    cursor: pointer; }
+    #portfolio .portfolio-item .portfolio-link .portfolio-hover {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      -webkit-transition: all ease 0.5s;
+      -moz-transition: all ease 0.5s;
+      transition: all ease 0.5s;
+      opacity: 0;
+      background: rgba(32, 12, 255,0.6); }
+      #portfolio .portfolio-item .portfolio-link .portfolio-hover:hover {
+        opacity: 1; }
+      #portfolio .portfolio-item .portfolio-link .portfolio-hover .portfolio-hover-content {
+        font-size: 20px;
+        position: absolute;
+        top: 50%;
+        width: 100%;
+        height: 20px;
+        margin-top: -12px;
+        text-align: center;
+        color: white; }
+        #portfolio .portfolio-item .portfolio-link .portfolio-hover .portfolio-hover-content i {
+          margin-top: -12px; }
+        #portfolio .portfolio-item .portfolio-link .portfolio-hover .portfolio-hover-content h3,
+        #portfolio .portfolio-item .portfolio-link .portfolio-hover .portfolio-hover-content h4 {
+          margin: 0; }
+  #portfolio .portfolio-item .portfolio-caption {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 25px;
+    text-align: center;
+    background-color: white; }
+    #portfolio .portfolio-item .portfolio-caption h4 {
+      margin: 0;
+      text-transform: none; }
+    #portfolio .portfolio-item .portfolio-caption p {
+      font-size: 16px;
+      font-style: italic;
+      margin: 0;
+      font-family: 'Droid Serif', 'Helvetica Neue', Helvetica, Arial, sans-serif; }
+
+#portfolio * {
+  z-index: 2; }
+
+@media (min-width: 767px) {
+  #portfolio .portfolio-item {
+    margin: 0 0 30px; } }
+
+.portfolio-modal .modal-dialog {
+  max-width: none;
+  height: 100%;
+  margin: 0; }
+
+.portfolio-modal .modal-content {
+  min-height: 100%;
+  padding: 100px 0;
+  text-align: center;
+  border: none;
+  border-radius: 0;
+  background-clip: border-box;
+  -webkit-box-shadow: none;
+  box-shadow: none; }
+  .portfolio-modal .modal-content h2 {
+    font-size: 3em;
+    margin-bottom: 15px; }
+  .portfolio-modal .modal-content p {
+    margin-bottom: 30px; }
+  .portfolio-modal .modal-content p.item-intro {
+    font-size: 16px;
+    font-style: italic;
+    margin: 20px 0 30px;
+    font-family: 'Droid Serif', 'Helvetica Neue', Helvetica, Arial, sans-serif; }
+  .portfolio-modal .modal-content ul.list-inline {
+    margin-top: 0;
+    margin-bottom: 30px; }
+  .portfolio-modal .modal-content img {
+    margin-bottom: 30px; }
+  .portfolio-modal .modal-content button {
+    cursor: pointer; }
+
+.portfolio-modal .close-modal {
+  position: absolute;
+  top: 25px;
+  right: 25px;
+  width: 75px;
+  height: 75px;
+  cursor: pointer;
+  background-color: transparent; }
+  .portfolio-modal .close-modal:hover {
+    opacity: 0.3; }
+  .portfolio-modal .close-modal .lr {
+    /* Safari and Chrome */
+    z-index: 1051;
+    width: 1px;
+    height: 75px;
+    margin-left: 35px;
+    /* IE 9 */
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+    background-color: #222222; }
+    .portfolio-modal .close-modal .lr .rl {
+      /* Safari and Chrome */
+      z-index: 1052;
+      width: 1px;
+      height: 75px;
+      /* IE 9 */
+      -webkit-transform: rotate(90deg);
+      -ms-transform: rotate(90deg);
+      transform: rotate(90deg);
+      background-color: #222222; }
+
+
+.portfolio-modal .modal-backdrop {
+  display: none;
+  opacity: 0; }
+
+  .chapelBackground{
+    background-image: url("../images/dukechapel.png");
+    background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-position: center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}

@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+ 
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Food Pal</title>
+    <!-- Bootstrap core CSS-->
+    <link href="bootstrap/vendor/bootstrap/css/bootstrap.css" rel="stylesheet">
+    <!-- Custom fonts for this template-->
+    <link href="bootstrap/vendor/font-awesome/css/font-awesome.css" rel="stylesheet" type="text/css">
+    <!-- Page level plugin CSS-->
+    <link href="bootstrap/vendor/datatables/dataTables.bootstrap4.css" rel="stylesheet">
+    <!-- Custom styles for this template-->
+    <link href="bootstrap/css/sb-admin.css" rel="stylesheet">
+  </head>
+  
+   <!-- INCLUDE IN EVERY PAGE -->
+<div class="card card-header" style=
+"background-image: url(http://image.cdnllnwnl.xosnetwork.com/pics33/800/EJ/EJVWCGVOQUQFEPH.20160906145230.jpg);
+background-position: top center;
+background-repeat: stretch;
+">
+  <div class="text-white text-center d-flex align-items-center rgba-black-strong py-5 px-4">
+      <div>
+          <h1 class="pink-text"><i class="fa fa-pie-chart"></i> Statistics</h1>
+          <a class="btn btn-pink"></i></a>
+          <h3 class="card-title pt-2"><strong></strong></h3>
+          <p>Use the statistics below to analyze your eating and spending habits. The following graphs provide
+            a breakdown based on macronutrient account, as well as distribution among different vendors. Check
+            it out!</p>
+          <a class="btn btn-pink"><br></i></a>
+      </div>
+  </div>
+</div>
+
+ <!-- Navigation-->
+ <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+    <div class="container">
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        Menu
+        <i class="fa fa-bars"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+            <a class="nav-link" href="home.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="diary.html">Diary</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="statistics.html">Statistics</a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link" href="suggestions.html">Suggestions</a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link" href="InsertMeal.html">Enter a Meal</a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link" data-toggle="modal" data-target="#exampleModal">Logout</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+          <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">×</span>
+          </button>
+        </div>
+        <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+        <div class="modal-footer">
+          <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+          <a class="btn btn-primary" onclick = "handleLogout();">Logout</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+ <!-- Charts -->
+ <div class="form-group" style = "margin: auto;width: 25%;padding: 10px;">
+  <label style:"text-align: center;">From how many days ago do you want to see data?</label>
+  <input id=keyword class="form-control" type="text" placeholder="EX: 7">
+  <center><a onclick="reloadStat();" class="btn btn-primary" >Get Info!</a></center> <br></br>
+</div>
+  <body onload="createPieCharts();createBarGraphs();">
+  <div class="content-wrapper">
+    <div class="container-fluid">
+      Check out your nutrition information below! Hover over the graphs to learn more. 
+      <div class="card mb-3">
+      </div>
+
+      <div class="row">
+         <!-- Money spent by Vendor -->
+         <div class="col-lg-4">
+            <div class="card mb-3">
+              <div class="card-header">
+                 <i class="fa fa-pie-chart"></i> Money Spent by Vendor</div>
+                 <div class="card-body">
+                   <canvas id="MoneyCountVendor" width="50%" height="50"></canvas>
+                 </div>
+          </div>
+        </div>
+         <!-- Macronutrients -->
+         <div class="col-lg-4">
+            <div class="card mb-3">
+              <div class="card-header">
+                 Macronutrients</div>
+                 <div class="card-body">
+                   <canvas id="Macronutrients" width="50%" height="50"></canvas>
+                 </div>
+          </div>
+        </div>
+         <!-- Money spent by Vendor -->
+         <div class="col-lg-4">
+            <div class="card mb-3">
+              <div class="card-header">
+                 Calorie Count by Vendor</div>
+                <div class="card-body">
+                  <canvas id="CalCountVendor" width="50%" height="50"></canvas>
+                </div>
+           </div>
+        </div>
+              <!-- Spending Different Vendors -->
+              <div class="col-lg-6">
+                  <div class="card mb-3">
+                    <div class="card-header">
+                       Duke's Most Popular Foods </div>
+                    <div class="card-body">
+                      <canvas id="MostPopVendors" width="100" height="50"></canvas>
+                    </div>
+                  </div>
+                </div>
+                <!-- Popular Food Items -->
+                <div class="col-lg-6">
+                  <div class="card mb-3">
+                    <div class="card-header">
+                      <i class="fa fa-bar-chart"></i> Your Most Frequent Foods </div>
+                      <div class="card-body">
+                        <canvas id="PopFoodItems" width="100" height="50"></canvas>
+                      </div>
+                  </div>
+                </div>    
+
+  </div>
+
+     
+  
+
+        
+
+  <div class="content-wrapper">
+      <div class="row">
+        <div class="col-lg-8">
+
+
+
+     </div>
+   </div>
+
+
+          
+
+
+  
+    <a class="scroll-to-top rounded" href="#page-top">
+      <i class="fa fa-angle-up"></i>
+    </a>
+    <!-- Logout Modal-->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+            <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">×</span>
+            </button>
+          </div>
+          <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+          <div class="modal-footer">
+            <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+            <a class="btn btn-primary" href="login.html">Logout</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+</body>
+    <!-- Bootstrap core JavaScript-->
+    <script src="bootstrap/vendor/jquery/jquery.js"></script>
+        <script src="web-backend/loginCheck.js"></script>
+    <script src="bootstrap/vendor/bootstrap/js/bootstrap.bundle.js"></script>
+    <!-- Core plugin JavaScript-->
+    <script src="bootstrap/vendor/jquery-easing/jquery.easing.js"></script>
+    <!-- Page level plugin JavaScript-->
+    <script src="bootstrap/vendor/chart.js/Chart.js"></script>
+    <!-- Custom scripts for all pages-->
+    <script src="bootstrap/js/sb-admin.js"></script>
+    <!-- Custom scripts for this page-->
+    <script src="bootstrap/js/sb-admin-charts.js"></script>
+    <script src="web-backend/logout.js"></script>
+
+</html>
